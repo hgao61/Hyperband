@@ -5,11 +5,11 @@ import os
 "function (and parameter space) definitions for hyperband"
 "regression with Keras (multilayer perceptron)"
 import sys
-from common_defs import *
+
 from time import time, ctime
 
 from keras.models import Sequential
-from keras.layers.core import Dense, Dropout
+
 from keras.layers.normalization import BatchNormalization as BatchNorm
 from keras.callbacks import EarlyStopping
 from keras.layers.advanced_activations import *
@@ -18,33 +18,22 @@ from sklearn.preprocessing import StandardScaler, RobustScaler, MinMaxScaler, Ma
 import keras
 import pdb
 from keras.layers.core import K  # import keras.backend as K
-from keras.optimizers import Adam, Nadam, RMSprop
+from keras.optimizers import SGD, Adam, Nadam, RMSprop
 from hyperopt import STATUS_OK, STATUS_FAIL
 import tensorflow as tf
 #import uuid
 import traceback
-import vgg16
-
-from keras.models import Sequential
-
-from keras.layers.normalization import BatchNormalization as BatchNorm
-from keras.callbacks import EarlyStopping
-from keras.layers.advanced_activations import *
-from keras.optimizers import Adam, Nadam, RMSprop
+#import vgg16
 
 from keras.layers.core import Dense, Dropout, Activation, Flatten
-from keras.optimizers import SGD, Adam
-from keras.utils import np_utils
-from keras.callbacks import EarlyStopping
-from keras.datasets import cifar10
 
+from keras.utils import np_utils
+from keras.datasets import cifar10
 from keras.layers.convolutional import Conv2D
-from keras.optimizers import Adam
 from keras.layers.pooling import MaxPooling2D
 from keras.utils import to_categorical
 #import tensorflow as tf
 
-from keras.datasets import cifar10
 from keras.utils import to_categorical
 fn ='vgglog.csv'
 
@@ -184,7 +173,7 @@ def vgg16_worker(xfile):
     dur_in_sec = int( round( time() - start_time ))
     xfile[2] = label['loss']
     #xfile[3] = self._gpuid
-    xfile[5].append([label['loss'], start_time, end_time, dur_in_sec])
+    xfile[5].append([label['loss'], xfile[3], start_time, end_time, dur_in_sec])
     '''
     with open(fn, 'a+') as log_file:
         csv_writer = csv.writer(log_file)

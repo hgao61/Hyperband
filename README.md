@@ -61,6 +61,7 @@ Finally, by combining the CPU-ash algorithm and the parallelization of GPU worke
 
 The command to run this program 
 *python main.py --gpuid '0,1,2'*
+
 ### Requirements
 keras==2.2.2
 
