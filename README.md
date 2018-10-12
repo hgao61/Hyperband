@@ -8,8 +8,7 @@ Although machine learning models have recently achieved dramatic successes in a 
 
 The traditional methods such like random search have the limitation of no early-stopping and no damatically allocation of computation resources. 
 
-The paper *Massively parallel hyperparameter tuning* presented a new way of parallelized hyperparameter tuning
-with the use of the algorithm *Hyperband* by [Li et al. 2016] and brought up the new algorithm called *Asynchronous Successive Halving Algorithm(ASH)*. 
+The paper *Massively parallel hyperparameter tuning* presented a new way of parallelized hyperparameter tuning with the use of the algorithm *Hyperband* by [Li et al. 2016] in the paper [Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization](https://arxiv.org/abs/1603.06560) and brought up the new algorithm called *Asynchronous Successive Halving Algorithm(ASH)*. 
 
 ### Project structure
 To implement this ASH algorithm, I break down the implementation into 3 mini projects representing 3 steps to achieve the goal. And here are the details of implementing those mini projects.  
